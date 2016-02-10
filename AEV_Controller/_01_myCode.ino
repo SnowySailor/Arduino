@@ -20,21 +20,27 @@ void myCode()
   //---------------------------------------------------------------------------------------- 
 
   // Program between here-------------------------------------------------------------------
-  
-  
-  // Run motor one at a constant speed (23% power) for 2.5 second.
-  motorSpeed(1,23);
-  goFor(2.5);
-  
-  // Brake motor one.
-  brake(1);
-
-  
+reverse(1);reverse(2);
+setBoth(25);
+goFor(2);
+setBoth(20);
+goToAbsolutePosition(397);
+reverse(1);
+reverse(2);
+setBoth(30);
+goFor(1.5);
+brake(1);
+brake(2);
+ 
 
   // And here--------------------------------------------------------------------------------
 
 } // DO NOT REMOVE. end of void myCode()
 
+void setBoth(int speed) {
+  motorSpeed(1,speed);
+  motorSpeed(2,speed);
+}
 
 
 
