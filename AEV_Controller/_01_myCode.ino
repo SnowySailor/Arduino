@@ -23,6 +23,7 @@ void myCode()
     celerate(4,0,25,3);
     goFor(1);
     setBoth(20);
+    //Go for 2 seconds
     goFor(2);
     reverse(4);
     setBoth(25);   
