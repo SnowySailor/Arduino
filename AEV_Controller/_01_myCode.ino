@@ -1,6 +1,6 @@
 void myCode() {
     //Accelerate
-    setBot(20);
+    setBoth(20);
     goToRelativePosition(505);
     brake(4);
 } // DO NOT REMOVE. end of void myCode()
