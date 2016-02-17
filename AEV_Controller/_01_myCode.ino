@@ -22,6 +22,3 @@ void setBoth(int speed) {
     motorSpeed(1,speed);
     motorSpeed(2,speed);
 }
-
-
-
