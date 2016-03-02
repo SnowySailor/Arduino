@@ -1,14 +1,18 @@
 void myCode() {
     //Accelerate
-    setBoth(20);
-    goToRelativePosition(322);
+    reverse(4);
+    setBoth(25);
+    goToRelativePosition(-290);
     reverse(4);
     setBoth(20);
     goFor(1);
-    goToRelativePosition(-322);
-    brake(4);
+    goToRelativePosition(290);
+    reverse(4);
     //int direction = getVehicleDirection();
     //stop(direction);
+    setBoth(35);
+    goFor(1.5);
+    brake(4);
 }
 
 void setBoth(int speed) {
