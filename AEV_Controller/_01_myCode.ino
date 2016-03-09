@@ -3,13 +3,13 @@ void myCode() {
     reverse(4);
     //Set both motors to 25
     setBoth(25);
-    goToRelativePosition(800);
-    stop();
+    goToRelativePosition(-800);
+    stop(getVehicleDirection());
     goFor(4);
     reverse(4);
     setBoth(25);
-    goToRelativePosition(-800);
-    stop();
+    goToRelativePosition(800);
+    stop(getVehicleDirection());
 }
 
 void setBoth(int speed) {
@@ -18,13 +18,14 @@ void setBoth(int speed) {
 }
 
 
-void stop() {
+void stop(int dir) {
+    setBoth(0);
     //Reverse the direction of motors.
     reverse(4);
     //Set both motors to 30
-    setBoth(30);
+    celerate(4,0,30,1.5);
     //While the AEV hasn't stopped
-    while(!(getVehicleDirection() == 2)) {
+    while(getVehicleDirection() != dir) {
         //Do literally nothing
     }
     //Stop motors once it is stopped.
