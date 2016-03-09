@@ -6,7 +6,6 @@ void myCode() {
     goToRelativePosition(-800);
     stop(getVehicleDirection());
     goFor(4);
-    reverse(4);
     setBoth(25);
     goToRelativePosition(800);
     stop(getVehicleDirection());
