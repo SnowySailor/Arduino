@@ -27,6 +27,21 @@ void myCode() {
     stop(getVehicleDirection());
     goFor(4);
 
+    //Go to third stop
+    setBoth(25);
+    goToRelativePosition(221);
+    stop(getVehicleDirection());
+    goFor(2);
+
+    //Go to GC
+    setBoth(25);
+    goToRelativePosition(492);
+    stop(getVehicleDirection());
+    goFor(2);
+
+    //Go to maintenance station
+    setBoth(25);
+    goToRelativePosition(-172);
     stop(getVehicleDirection());
 }
 
@@ -43,7 +58,7 @@ void stop(int dir) {
     //Set both motors to 30
     celerate(4,0,30,1);
     //While the AEV hasn't stopped
-    while(getVehicleDirection() == dir) {
+    while(getVehicleDirection() == dir && dir != 2) {
         //Do literally nothing
     }
     //Stop motors once it is stopped.
