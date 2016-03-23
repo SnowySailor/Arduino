@@ -1,47 +1,49 @@
 void myCode() {
     //Reverse motors
-    reverse(4);
     //Set both motors to 25
     setBoth(25);
     //Start at station
-    goToRelativePosition(177);
+    goToRelativePosition(157);
     stop(getVehicleDirection());
     //Do hook stuff
     goFor(2);
     setBoth(25);
     
     //Go to the first stop
-    goToRelativePosition(-172);
+    goToRelativePosition(-152);
     stop(getVehicleDirection());
     goFor(2);
 
     //Go to second stop
+    reverse(4);
     setBoth(25);
-    goToRelativePosition(-270);
+    goToRelativePosition(-260);
     stop(getVehicleDirection());
     goFor(2);
 
     //Stop at the end to let them off
-    setBoth(29);
-    goToRelativePosition(-197);
+    reverse(4);
+    setBoth(35);
+    goToRelativePosition(-247);
     stop(getVehicleDirection());
     goFor(4);
 
     //Go to third stop
-    setBoth(25);
-    goToRelativePosition(221);
+    setBoth(17);
+    goToRelativePosition(120);
     stop(getVehicleDirection());
     goFor(2);
 
     //Go to GC
-    setBoth(25);
-    goToRelativePosition(492);
+    reverse(4);
+    setBoth(20);
+    goToRelativePosition(422);
     stop(getVehicleDirection());
     goFor(2);
 
     //Go to maintenance station
     setBoth(25);
-    goToRelativePosition(-172);
+    goToRelativePosition(-152);
     stop(getVehicleDirection());
 }
 
@@ -56,10 +58,15 @@ void stop(int dir) {
     //Reverse the direction of motors.
     reverse(4);
     //Set both motors to 30
-    celerate(4,0,30,1);
+    setBoth(30);
     //While the AEV hasn't stopped
-    while(getVehicleDirection() == dir && dir != 2) {
+    int nums[2];
+    int start = 0;
+    while(getVehicleDirection() == dir) {
         //Do literally nothing
+        if(dir == 2) {
+          break;
+        }
     }
     //Stop motors once it is stopped.
     brake(4);
