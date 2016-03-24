@@ -18,15 +18,15 @@ void myCode() {
     //Go to second stop
     reverse(4);
     setBoth(speed);
-    goToRelativePosition(-260);
+    goToRelativePosition(-273);
     stop(getVehicleDirection(), true);
     goFor(2);
 
     //Stop at the end to let them off
     reverse(4);
     setBoth(speed+15);
-    goToRelativePosition(-227);
-    stop(getVehicleDirection(), true);
+    goToRelativePosition(-190);
+    stop(getVehicleDirection(), false);
     goFor(4);
 
     //Go to third stop
@@ -38,7 +38,7 @@ void myCode() {
     //Go to GC
     reverse(4);
     setBoth(speed);
-    goToRelativePosition(442);
+    goToRelativePosition(422);
     stop(getVehicleDirection(), true);
     goFor(2);
 
