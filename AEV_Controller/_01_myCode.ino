@@ -62,7 +62,7 @@ void stop(int dir) {
     //While the AEV hasn't stopped
     int nums[2];
     int start = 0;
-    while(getVehicleDirection() == dir) {
+    while(getVehicleDirection() == dir && getVehicleDirection() == dir) {
         //Do literally nothing
         if(dir == 2) {
           break;
