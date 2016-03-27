@@ -20,6 +20,7 @@ void myCode() {
     setBoth(speed);
     goToRelativePosition(-260);
     stop(getVehicleDirection(), true);
+    correct(450);
     goFor(2);
 
     //Stop at the end to let them off
@@ -78,6 +79,23 @@ void stop(int dir, boolean thing) {
     }
     brake(4);
    
+}
+
+void correct(int loc) {
+    int pos = getVehiclePosition();
+    int diff = pos - loc;
+    if(diff >= 5) {
+        if(diff > 0) {
+            setBoth(sqrt(diff)*2);
+            goFor(1);
+            correct(getVehiclePosition());
+        } else {
+            setBoth(sqrt(diff)*2);
+            goFor(1);
+            correct(getVehiclePosition());
+        }
+    }
+    stop(getVehicleDirection(), false);
 }
 
 
