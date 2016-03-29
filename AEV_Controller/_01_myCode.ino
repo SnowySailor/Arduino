@@ -62,11 +62,8 @@ void stop(int dir, boolean thing) {
     setBoth(30);
     //While the AEV hasn't stopped
     int start = 0;
-    while(getVehicleDirection() == dir && getVehicleDirection() == dir) {
+    while(getVehicleDirection() == dir && getVehicleDirection() == dir && getVehicleDirection() != 2) {
         //Do literally nothing
-        if(dir == 2) {
-          break;
-        }
     }
     //Stop motors once it is stopped.
     brake(4);
