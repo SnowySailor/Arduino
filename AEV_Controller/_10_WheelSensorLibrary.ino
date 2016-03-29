@@ -22,7 +22,7 @@
 //**************************************************************************
 // (1) Get Absolute Vehicle Position
 
-int getVehiclePostion()
+int getVehiclePosition()
 {
   //------------------------------------------------------------------------
   // getVehiclePostion();
@@ -338,4 +338,17 @@ void reflectanceSensorTest()
   while(1);
   
   
+}
+
+byte getMotorDirection(byte m) {
+  switch(m) {
+    case 1:
+      return digitalRead(hblogic1a);
+    case 2:
+      return digitalRead(hblogic2a);
+    case 3:
+      return digitalRead(hblogic3a);
+    default:
+      return 5;
+  }
 }

@@ -84,15 +84,17 @@ void stop(int dir, boolean thing) {
 void correct(int loc) {
     int pos = getVehiclePosition();
     int diff = pos - loc;
+    int direction = getMotorDirection(1);
+    
     if(diff >= 5) {
         if(diff > 0) {
             setBoth(sqrt(diff)*2);
             goFor(1);
-            correct(getVehiclePosition());
+            correct(loc);
         } else {
             setBoth(sqrt(diff)*2);
             goFor(1);
-            correct(getVehiclePosition());
+            correct(loc);
         }
     }
     stop(getVehicleDirection(), false);
