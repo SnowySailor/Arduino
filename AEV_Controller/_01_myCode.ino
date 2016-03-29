@@ -25,7 +25,7 @@ void myCode() {
     //Stop at the end to let them off
     reverse(4);
     setBoth(speed+15);
-    goToRelativePosition(-190);
+    goToRelativePosition(-227);
     stop(getVehicleDirection(), false);
     goFor(4);
 
@@ -61,13 +61,9 @@ void stop(int dir, boolean thing) {
     //Set both motors to 30
     setBoth(30);
     //While the AEV hasn't stopped
-    int nums[2];
     int start = 0;
-    while(getVehicleDirection() == dir && getVehicleDirection() == dir) {
+    while(getVehicleDirection() == dir && getVehicleDirection() == dir && getVehicleDirection() != 2) {
         //Do literally nothing
-        if(dir == 2) {
-          break;
-        }
     }
     //Stop motors once it is stopped.
     brake(4);
