@@ -34,7 +34,7 @@ void myCode() {
 
     //Go to third stop
     setBoth(17);
-    goToRelativePosition(120);
+    goToRelativePosition(126);
     stop(getVehicleDirection(), false);
     goFor(2);
 
@@ -58,11 +58,12 @@ void setBoth(int speed) {
 
 
 void stop(int dir, boolean thing) {
+  int speed = 23; 
     setBoth(0);
     //Reverse the direction of motors.
     reverse(4);
     //Set both motors to 30
-    setBoth(30);
+    setBoth(speed+7);
     //While the AEV hasn't stopped
     int start = 0;
     while(getVehicleDirection() == dir && getVehicleDirection() == dir) {
