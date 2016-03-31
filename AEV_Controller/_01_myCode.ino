@@ -1,13 +1,20 @@
 void myCode() {
+    //Reset servo
+    rotateServo(90);
     //Reverse motors
-    //Set both motors to 25
+    //Set both motors to 23
     int speed = 23;
     setBoth(speed);
     //Start at station
     goToRelativePosition(147);
     stop(getVehicleDirection(), true);
     //Do hook stuff
+    goFor(4);
+    //Lower servo to grab cart
+    rotateServo(0);
+    //Pause to let thigns settle
     goFor(2);
+    //Proceed
     setBoth(speed);
    
     //Go to the first stop
