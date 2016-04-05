@@ -105,9 +105,9 @@ void correct(int loc) {
     }
     int newSpeed;
     if(diff < 10) {
-        newSpeed = pow(diff,1.42)*2;
+        newSpeed = 20;
     } else if(diff < 20) {
-        newSpeed = pow(diff,0.91)*2;
+        newSpeed = 10 * (log(diff)/log(3));
     } else if (diff < 50) {
         newSpeed = 12 * (log(diff)/log(5));
     } else {
@@ -118,8 +118,10 @@ void correct(int loc) {
         setBoth(newSpeed);
         goFor(1);
         correct(loc);
+    } else {
+        stop(getVehicleDirection(), false);
     }
-    stop(getVehicleDirection(), false);
+    
 }
 
 
