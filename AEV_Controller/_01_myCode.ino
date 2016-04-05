@@ -92,14 +92,14 @@ void stop(int dir, boolean thing) {
 
 void correct(int loc) {
     int pos = getVehiclePosition();
-    int diff = pos - loc;
+    int diff = loc - pos;
     
-    if(diff < 0) {
-        if(motorDirection) {
+    if(diff > 0) {
+        if(!motorDirection) {
             reverse(4);
         }
     } else {
-        if(!motorDirection) {
+        if(motorDirection) {
             reverse(4);
         }
     }
@@ -114,9 +114,9 @@ void correct(int loc) {
         newSpeed = 12 * (log(diff)/log(5));
     }
 
-    if(diff >= 2) {
+    if(abs(diff) >= 5) {
         setBoth(newSpeed);
-        goFor(1);
+        goFor(0.75);
         correct(loc);
     } else {
         stop(getVehicleDirection(), false);
