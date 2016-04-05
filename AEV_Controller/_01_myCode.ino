@@ -7,6 +7,7 @@ void myCode() {
     setBoth(speed);
     //Start at station
     goToRelativePosition(147);
+    correct(165);
     stop(getVehicleDirection(), true);
     //Do hook stuff
     goFor(4);
@@ -14,9 +15,6 @@ void myCode() {
     rotateServo(0);
     //Pause to let thigns settle
     goFor(2);
-    if(motorDirection) {
-        goFor(5);
-    }
     //Proceed
     setBoth(speed);
    
@@ -95,18 +93,23 @@ void stop(int dir, boolean thing) {
 void correct(int loc) {
     int pos = getVehiclePosition();
     int diff = pos - loc;
-    //int direction = getMotorDirection(1);
     
-    if(diff >= 5) {
-        if(diff > 0) {
-            setBoth(sqrt(diff)*2);
-            goFor(1);
-            correct(loc);
-        } else {
-            setBoth(sqrt(diff)*2);
-            goFor(1);
-            correct(loc);
+    if(diff < 0) {
+        if(motorDirection) {
+            reverse(4);
         }
+    } else {
+        if(!motorDirection) {
+            reverse(4);
+        }
+    }
+
+    int newSpeed = (diff < 50) ? ((diff < 20) ? ((diff < 10) ? pow(diff,1.42)*2) : pow(diff,0.91)*2) : pow(diff, 0.5)*2;
+
+    if(diff >= 2) {
+        setBoth(newSpeed);
+        goFor(1);
+        correct(loc);
     }
     stop(getVehicleDirection(), false);
 }
