@@ -87,6 +87,9 @@ unsigned long minTimeLapse           =   60;      // Threshold for recording dat
 // EEprom storage
 int nBytes                           = 0;         // Number of bytes EEProm recorded
 
+//Motor direction
+bool motorDirection = true;
+
 // Quadrature Encoder
 boolean encoderSetA                  = false;     // Boolean quadrature encoder for sensor A
 boolean encoderSetB                  = false;     // Boolean quadrature encoder for sensor A
@@ -176,6 +179,10 @@ void setup()
   postProcess();
   // -------------------------------------------------------------------------
 
+}
+
+void reverseMotorDirection() {
+  motorDirection = !motorDirection;
 }
 
 void loop()                     

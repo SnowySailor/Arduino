@@ -71,4 +71,5 @@ void reverse(byte motor)
     digitalWrite(hblogic3b, !digitalRead(hblogic3b) ); // motor 3
     
   }
+  reverseMotorDirection();
 }

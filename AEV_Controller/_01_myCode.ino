@@ -14,6 +14,9 @@ void myCode() {
     rotateServo(0);
     //Pause to let thigns settle
     goFor(2);
+    if(motorDirection) {
+        goFor(5);
+    }
     //Proceed
     setBoth(speed);
    
@@ -92,7 +95,7 @@ void stop(int dir, boolean thing) {
 void correct(int loc) {
     int pos = getVehiclePosition();
     int diff = pos - loc;
-    int direction = getMotorDirection(1);
+    //int direction = getMotorDirection(1);
     
     if(diff >= 5) {
         if(diff > 0) {
