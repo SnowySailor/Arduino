@@ -103,8 +103,16 @@ void correct(int loc) {
             reverse(4);
         }
     }
-
-    int newSpeed = (diff < 50) ? ((diff < 20) ? ((diff < 10) ? pow(diff,1.42)*2) : pow(diff,0.91)*2) : pow(diff, 0.5)*2;
+    int newSpeed;
+    if(diff < 10) {
+        newSpeed = pow(diff,1.42)*2;
+    } else if(diff < 20) {
+        newSpeed = pow(diff,0.91)*2;
+    } else if (diff < 50) {
+        newSpeed = 12 * (log(diff)/log(5));
+    } else {
+        newSpeed = 12 * (log(diff)/log(5));
+    }
 
     if(diff >= 2) {
         setBoth(newSpeed);
