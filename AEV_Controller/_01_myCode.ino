@@ -6,7 +6,7 @@ void myCode() {
     int speed = 23;
     setBoth(speed);
     //Start at station
-    goToRelativePosition(147);
+    goToRelativePosition(140);
     stop(getVehicleDirection(), true);
     //Do hook stuff
     goFor(4);
@@ -18,9 +18,9 @@ void myCode() {
     setBoth(speed);
    
     //Go to the first stop
-    goToRelativePosition(-50);
-    descend(9,speed,1);
-    goToRelativePosition(-50);
+    goToRelativePosition(-64);
+    descend(13,speed,1);
+    goToRelativePosition(-60);
     stop(getVehicleDirection(), true);
     goFor(2);
 
@@ -43,8 +43,8 @@ void myCode() {
 
     //Go to third stop
     setBoth(17);
-    goToRelativePosition(55);
-    descend(9,speed,0);
+    goToRelativePosition(75);
+    descend(13,speed,0);
     goToRelativePosition(98);
     stop(getVehicleDirection(), false);
     goFor(2);
@@ -58,8 +58,8 @@ void myCode() {
 
     //Go to maintenance station
     setBoth(speed);
-    goToRelativePosition(-50);
-    descend(9,speed,1);
+    goToRelativePosition(-64);
+    descend(13,speed,1);
     stop(getVehicleDirection(), true);
 }
 
@@ -97,6 +97,7 @@ void descend(int sp,int original, int direction) {
     brake(4);
     reverse(4);
     setBoth(sp);
+    int distance;
     if(direction == 0) {distance = 100;} else {distance = -100;}
     goToRelativePosition(distance);
     reverse(4);
