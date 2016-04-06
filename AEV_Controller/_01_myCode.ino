@@ -6,7 +6,7 @@ void myCode() {
     int speed = 23;
     setBoth(speed);
     //Start at station
-    goToRelativePosition(140);
+    goToRelativePosition(147);
     stop(getVehicleDirection(), true);
     //Do hook stuff
     goFor(4);
