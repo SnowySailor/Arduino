@@ -3,10 +3,10 @@ void myCode() {
     rotateServo(90);
     //Reverse motors
     //Set both motors to 23
-    int speed = 23;
-    setBoth(speed);
+    int speed = 29;
+    setBoth(24);
     //Start at station
-    goToRelativePosition(147);
+    goToRelativePosition(162);
     stop(getVehicleDirection(), true);
     //Do hook stuff
     goFor(4);
@@ -18,48 +18,50 @@ void myCode() {
     setBoth(speed);
    
     //Go to the first stop
-    goToRelativePosition(-64);
-    descend(13,speed,1);
     goToRelativePosition(-60);
+    descend(13,speed,1);
+    goToRelativePosition(-34);
     stop(getVehicleDirection(), true);
     goFor(2);
 
     //Go to second stop
     reverse(4);
     setBoth(speed);
-    goToRelativePosition(-280);
+    goToRelativePosition(-311);
     stop(getVehicleDirection(), true);
     goFor(2);
 
     //Stop at the end to let them off
     reverse(4);
-    setBoth(speed+15);
-    goToRelativePosition(-187);
+    setBoth(speed+20);
+    goToRelativePosition(-207);
     stop(getVehicleDirection(), true);
     reverse(4);
-    setBoth(12);
+    setBoth(13);
     goFor(4);
     reverse(4);
 
     //Go to third stop
     setBoth(17);
-    goToRelativePosition(75);
+    goToRelativePosition(55);
     descend(13,speed,0);
-    goToRelativePosition(98);
+    goToRelativePosition(38);
     stop(getVehicleDirection(), false);
     goFor(2);
 
     //Go to GC
     reverse(4);
     setBoth(speed);
-    goToRelativePosition(399);
+    goToRelativePosition(430);
     stop(getVehicleDirection(), true);
     goFor(2);
+    rotateServo(90);
+    goFor(1);
 
     //Go to maintenance station
-    setBoth(speed);
+    setBoth(23);
     goToRelativePosition(-64);
-    descend(13,speed,1);
+    descend(13,23,1);
     stop(getVehicleDirection(), true);
 }
 
