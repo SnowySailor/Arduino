@@ -6,7 +6,7 @@ void myCode() {
     int speed = 29;
     setBoth(24);
     //Start at station
-    goToRelativePosition(145);
+    goToRelativePosition(155);
     stop(getVehicleDirection(), true);
     //Do hook stuff
     goFor(4);
@@ -20,7 +20,7 @@ void myCode() {
     //Go to the first stop
     goToRelativePosition(-60);
     descend(13,speed,1);
-    goToRelativePosition(-40);
+    goToRelativePosition(-50);
     stop(getVehicleDirection(), true);
     goFor(2);
 
@@ -34,7 +34,7 @@ void myCode() {
     //Stop at the end to let them off
     reverse(4);
     setBoth(speed+20);
-    goToRelativePosition(-198);
+    goToRelativePosition(-197);
     stop(getVehicleDirection(), true);
     reverse(4);
     setBoth(13);
@@ -45,14 +45,14 @@ void myCode() {
     setBoth(17);
     goToRelativePosition(51);
     descend(13,speed,0);
-    goToRelativePosition(38);
+    goToRelativePosition(42);
     stop(getVehicleDirection(), false);
     goFor(2);
 
     //Go to GC
     reverse(4);
     setBoth(speed);
-    goToRelativePosition(438);
+    goToRelativePosition(445);
     stop(getVehicleDirection(), true);
     goFor(2);
     rotateServo(90);
